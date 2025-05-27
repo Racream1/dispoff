@@ -9,8 +9,11 @@
   <!-- React & ReactDOM via CDN -->
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <!-- Dexie.js -->
-  <script src="https://unpkg.com/dexie@3.2.2/dist/dexie.umd.min.js"></script>
+  <!-- Load Dexie as ES module and expose to global -->
+  <script type="module">
+    import Dexie from 'https://unpkg.com/dexie@3.2.2/dist/dexie.mjs';
+    window.Dexie = Dexie;
+  </script>
 </head>
 <body class="bg-gray-100">
   <div id="root" class="p-4"></div>
